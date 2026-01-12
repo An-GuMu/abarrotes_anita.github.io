@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de Sesión</title>
+    <title>Inicio - Abarrotes Anita</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
+<body class="admin-page">
 
     <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Producto</a></li>
+                <li><a href="proveedor.html">Proveedor</a></li>
+                <li><a href="compras.html">Compras</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="login-container">
-            <h1>Inicia sesión</h1>
+        <h1 style="text-align: center; margin-bottom: 40px;">
+            Bienvenido, Admin
+        </h1>
 
-            <form action="TU_DOMINIO_EN_INFINITYFREE/lg_check.php" method="POST">
-                <div class="form-group">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                
-                <button type="submit">Entrar</button>
-            </form>
+        <div class="dashboard-menu">
+            <a href="producto.html" class="dashboard-button">
+                Gestionar Productos
+            </a>
+            <a href="proveedor.html" class="dashboard-button">
+                Gestionar Proveedores
+            </a>
+            <a href="compras.html" class="dashboard-button">
+                Ver Historial de Compras
+            </a>
         </div>
     </main>
 
