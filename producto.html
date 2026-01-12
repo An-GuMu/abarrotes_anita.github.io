@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Productos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Producto</a></li>
+                <li><a href="proveedor.html">Proveedor</a></li>
+                <li><a href="compras.html">Compras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gestionar Productos</h1>
+        
+        <h2>Agregar Nuevo Producto</h2>
+        <form action="#" method="POST">
+            <input type="text" name="codigo_barras" placeholder="Código de Barras" style="width: 100%;">
+            <input type="text" name="nombre" placeholder="Nombre Producto" style="flex-grow: 1;">
+            <input type="number" step="0.01" name="precio" placeholder="Precio">
+            <input type="number" name="cantidad" placeholder="Cantidad (Stock)">
+            <select name="id_proveedor" style="flex-grow: 1;">
+                <option value="">-- Seleccionar Proveedor --</option>
+                <option value="PROV-001">PROV-001 (Bimbo)</option>
+                <option value="PROV-002">PROV-002 (Sony)</option>
+            </select>
+            <select name="tipo_producto" id="tipo_producto" onchange="mostrarCampos()" style="width: 100%;">
+                <option value="">-- Tipo de Producto --</option>
+                <option value="duradero">Duradero (con Garantía)</option>
+                <option value="no_duradero">No Duradero (con Caducidad)</option>
+            </select>
+            
+            <div id="campos_duradero" class="campo-hijo">
+                <input type="text" name="garantia" placeholder="Garantía (ej: 1 año)" style="width: 100%;">
+            </div>
+
+            <div id="campos_no_duradero" class="campo-hijo">
+                <input type="date" name="caducidad" title="Caducidad">
+                <input type="number" step="0.01" name="temperatura" placeholder="Temperatura °C">
+            </div>
+
+            <button type="button" class="full-width">Agregar Producto (Demo)</button>
+        </form>
+
+        <h2>Lista de Productos</h2>
+        <table>
+            <thead>
+                <tr><th>Cód. Barras</th><th>Nombre</th><th>Precio</th><th>Stock</th><th>Proveedor</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>750100123</td>
+                    <td>Coca Cola 600ml</td>
+                    <td>$18.50</td>
+                    <td>50</td>
+                    <td>PROV-001</td>
+                </tr>
+                <tr>
+                    <td>750100122</td>
+                    <td>Coca Cola Light Sony</td>
+                    <td>$3500.00</td>
+                    <td>5</td>
+                    <td>PROV-002</td>
+                </tr>
+                <tr>
+                    <td>750500999</td>
+                    <td>Leche Alpura</td>
+                    <td>$24.00</td>
+                    <td>20</td>
+                    <td>PROV-003</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+    function mostrarCampos() {
+        var tipo = document.getElementById('tipo_producto').value;
+        document.getElementById('campos_duradero').style.display = (tipo === 'duradero') ? 'flex' : 'none';
+        document.getElementById('campos_no_duradero').style.display = (tipo === 'no_duradero') ? 'flex' : 'none';
+    }
+    </script>
+</body>
+</html>

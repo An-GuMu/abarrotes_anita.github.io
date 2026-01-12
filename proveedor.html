@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Proveedores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Producto</a></li>
+                <li><a href="proveedor.html">Proveedor</a></li>
+                <li><a href="compras.html">Compras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gestionar Proveedores</h1>
+
+        <h2>Agregar Nuevo Proveedor</h2>
+        <form action="#" method="POST">
+            <input type="text" placeholder="ID Proveedor (ej: PROV-001)">
+            <input type="date" title="Día de surtido">
+            <input type="time" title="Hora de surtido">
+            <button type="button">Agregar Proveedor (Demo)</button>
+        </form>
+
+        <h2>Lista de Proveedores</h2>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Día Surtido</th><th>Hora Surtido</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>PROV-001</td><td>2026-01-10</td><td>08:00:00</td></tr>
+                <tr><td>PROV-002</td><td>2026-01-12</td><td>14:30:00</td></tr>
+                <tr><td>PROV-003</td><td>2026-01-15</td><td>09:15:00</td></tr>
+            </tbody>
+        </table>
+
+        <hr style="margin: 30px 0;">
+
+        <h2>Agregar Teléfono a Proveedor</h2>
+        <form action="#" method="POST">
+             <select>
+                <option value="">-- Seleccionar Proveedor --</option>
+                <option>PROV-001</option>
+                <option>PROV-002</option>
+            </select>
+            <input type="text" placeholder="Número de Teléfono">
+            <button type="button">Agregar Teléfono (Demo)</button>
+        </form>
+
+        <h2>Lista de Teléfonos</h2>
+        <table>
+            <thead>
+                <tr><th>ID Proveedor</th><th>Teléfono</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>PROV-001</td><td>55-1234-5678</td></tr>
+                <tr><td>PROV-001</td><td>55-8765-4321</td></tr>
+                <tr><td>PROV-002</td><td>55-0000-9999</td></tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
